@@ -30,6 +30,20 @@ var beweegAlles = function () {
   // kogel
 
   // speler
+if (keyIsDown(KEY_LEFT))
+{ spelerX = spelerX -10;
+}
+if (keyIsdown(KEY_RIGHT))
+{ spelerX = spelerX + 10;
+ }
+if (keyIsDown(KEY_UP))
+{ spelerY = spelerY - 10
+}
+if (keyIsDown(KEY_DOWN))
+{ spelerY = spelerY + 10
+}
+
+
 
 };
 
@@ -56,9 +70,9 @@ var tekenAlles = function () {
   // kogel
 
   // speler
-  fill("white");
+  fill("orange");
   rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
+  fill("red");
   ellipse(spelerX, spelerY, 10, 10);
 
   // punten en health
@@ -87,7 +101,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background('olive ');
 }
 
 /**
