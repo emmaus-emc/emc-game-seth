@@ -14,6 +14,11 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
+const KEY_LEFT = 37;
+const KEY_UP =38;
+const KEY_RIGHT =39; 
+const KEY_DOWN =40;
+
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
@@ -29,22 +34,25 @@ var beweegAlles = function () {
 
   // kogel
 
-  // speler
-if (keyIsDown(KEY_LEFT))
-{ spelerX = spelerX -10;
-}
-if (keyIsdown(KEY_RIGHT))
-{ spelerX = spelerX + 10;
- }
-if (keyIsDown(KEY_UP))
-{ spelerY = spelerY - 10
-}
-if (keyIsDown(KEY_DOWN))
-{ spelerY = spelerY + 10
-}
+  // speler bewergen als toets ingedrukt
+  if (keyIsDown(KEY_LEFT)) {
+    spelerX = spelerX - 10;
+  }
+  if (keyIsDown(KEY_RIGHT)) {
+    spelerX = spelerX + 10;
+  }
+  if (keyIsDown(KEY_UP)) {
+    spelerY = spelerY - 10
+  }
+  if (keyIsDown(KEY_DOWN)) {
+    spelerY = spelerY + 10
+  }
 
-
-
+  // speler bij rand stoppen
+if (spelerX > 1280){spelerX=1280};
+if (spelerX < 0){spelerX=0};
+if (spelerY < 0){spelerY=0};
+if (spelerY > 720){spelerY=720};
 };
 
 /**
@@ -60,11 +68,14 @@ var verwerkBotsing = function () {
 };
 
 /**
- * Tekent spelscherm
+ * Tekent spelscherm*
  */
+
+
 var tekenAlles = function () {
   // achtergrond
-
+fill(20,75,200);
+rect(0,0,1280,720);
   // vijand
 
   // kogel
